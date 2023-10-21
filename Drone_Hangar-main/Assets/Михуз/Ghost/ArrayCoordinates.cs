@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ArrayCoordinates : MonoBehaviour
+{
+    public GameObject BPLA;
+    public GameObject GhostBPLA;
+    
+    public static List<Vector3> _coordsBPLA = new List<Vector3>();
+    public List<Vector3> _coordsGhost;
+    public static int i = 0;
+    public int count = 0;
+    void Awake()
+    {
+        _coordsGhost = new List<Vector3>();
+        count = 0;
+        if (i > 0)
+        {
+            foreach (Vector3 c in _coordsBPLA)
+            {
+                _coordsGhost.Add(c);
+            }
+            _coordsGhost = _coordsBPLA;
+            _coordsBPLA = new List<Vector3>();
+        }
+        i++;
+    
+    }
+
+    void FixedUpdate()
+    {
+
+        if (++count <= _coordsGhost.Count)
+        {
+            GhostBPLA.transform.position = _coordsGhost[count];
+        }
+
+        _coordsBPLA.Add(BPLA.transform.position);
+    }
+
+}

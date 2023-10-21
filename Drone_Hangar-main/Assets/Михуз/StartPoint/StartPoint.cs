@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameMode : MonoBehaviour
+public class StartPoint : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject BPLA;
+    public GameObject ghostBPLA;
     void Start()
     {
         

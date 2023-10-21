@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CheckPointSystem : MonoBehaviour
 {
 
+    public GameOverScreen gameOverScreen;
+    
+    public GhostController ghostController;
+    public ArrayCoordinates coordinates;
+
     public const int NumOfCheckpoint = 10;
     [SerializeField] public CheckPoint[] ArrayPrefabs;
     internal int CurrentCheckPoint;
+
+    public GameObject BPLA;
+    public List<Transform> path;
+    
     void Awake()
     {       
         if (gameObject.transform.childCount> 0)
@@ -27,7 +37,9 @@ public class CheckPointSystem : MonoBehaviour
 
     public void GameOver()
     {
-        Debug.Log("ayeaye");
+        gameOverScreen.Restart();        
+        SceneManager.LoadScene("Hangar");
         Application.Quit();
     }
+
 }
