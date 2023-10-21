@@ -35,7 +35,7 @@ public class CheckPointSystem : MonoBehaviour
     public void GameOver()
     {
         //gameOverScreen.Restart();        
-        SceneManager.LoadScene("Hangar");
+        SceneManager.LoadScene("City");
         Application.Quit();
     }
 
