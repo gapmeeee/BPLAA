@@ -9,13 +9,15 @@ public class ArrayCoordinates : MonoBehaviour
 
     public static List<Quaternion> _rotationBPLA = new List<Quaternion>();
     public List<Quaternion> _rotationGhost;
+    private Quaternion q = Quaternion.Euler(1f,1f,1f);
 
     public static List<Vector3> _coordsBPLA = new List<Vector3>();
     public List<Vector3> _coordsGhost;
     public static int i = 0;
     public int count = 0;
     void Awake()
-    {
+    {   
+        GhostBPLA.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
         _coordsGhost = new List<Vector3>();
         _rotationGhost = new List<Quaternion>();
         count = 0;
