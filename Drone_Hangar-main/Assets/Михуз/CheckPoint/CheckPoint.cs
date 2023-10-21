@@ -19,7 +19,7 @@ public class CheckPoint : MonoBehaviour
         {
             checkPointSystem.GameOver();
         }
-        if (other.tag == "TriggerCheckPoint" && EnterFlag)
+        if (other.name ==  "Drone_White" && EnterFlag)
         {
             gameObject.GetComponent<Renderer>().material = SecondColor;
 

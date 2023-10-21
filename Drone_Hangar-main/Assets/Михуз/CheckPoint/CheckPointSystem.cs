@@ -6,10 +6,7 @@ using UnityEngine.SceneManagement;
 public class CheckPointSystem : MonoBehaviour
 {
 
-    public GameOverScreen gameOverScreen;
-    
-    public GhostController ghostController;
-    public ArrayCoordinates coordinates;
+    //public GameOverScreen gameOverScreen;
 
     public const int NumOfCheckpoint = 10;
     [SerializeField] public CheckPoint[] ArrayPrefabs;
@@ -37,7 +34,7 @@ public class CheckPointSystem : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverScreen.Restart();        
+        //gameOverScreen.Restart();        
         SceneManager.LoadScene("Hangar");
         Application.Quit();
     }
