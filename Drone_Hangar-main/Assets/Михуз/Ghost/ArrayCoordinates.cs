@@ -17,7 +17,6 @@ public class ArrayCoordinates : MonoBehaviour
     public int count = 0;
     void Awake()
     {   
-        GhostBPLA.transform.rotation = Quaternion.Euler(-90f, 0f, 0f);
         _coordsGhost = new List<Vector3>();
         _rotationGhost = new List<Quaternion>();
         count = 0;
